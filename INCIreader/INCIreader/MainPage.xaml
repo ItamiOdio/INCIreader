@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+            xmlns:local="clr-namespace:INCIreader"
+             x:Class="INCIreader.MainPage">
+  <!--Pages can be added as references or inline-->
+    <TabbedPage.Background>
+        <LinearGradientBrush EndPoint="0,1">
+            <GradientStop Color="{AppThemeBinding Dark=#415278, Light=#969BA4}"
+                          Offset="0.1" />
+
+            <GradientStop Color="{AppThemeBinding Dark=#1A1B2C, Light=#718EAF}"
+                          Offset="1.0" />
+        </LinearGradientBrush>
+        </TabbedPage.Background>
+        <NavigationPage Title="Check INCI">
+        <x:Arguments>
+             <local:CheckINCIPage/>
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="INCI base">
+        <x:Arguments>
+            <local:InciBasePage/>
+        </x:Arguments>
+    </NavigationPage>
+
+</TabbedPage>

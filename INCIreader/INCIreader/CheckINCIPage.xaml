@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="INCIreader.CheckINCIPage">
+
+    <ContentPage.Resources>
+
+    </ContentPage.Resources>
+
+    <NavigationPage.TitleView>
+        <AbsoluteLayout VerticalOptions="CenterAndExpand">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+             <Label Text="DARK MODE" Grid.Column="0" HorizontalTextAlignment="End"></Label>
+            <Switch IsToggled="False" Grid.Column="1" HorizontalOptions="End"></Switch>
+            
+            </Grid>
+            
+        </AbsoluteLayout>
+    </NavigationPage.TitleView>
+
+
+
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="AUTO"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="AUTO"></RowDefinition>
+                <RowDefinition Height="AUTO"></RowDefinition>
+                <RowDefinition Height="AUTO"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Label 
+                x:Name="headerLabel" 
+                Grid.Row="0" 
+                Text="Paste your INCI here:"  
+                FontSize="Large"
+                FontFamily="calibri"
+                TextColor="{AppThemeBinding Dark=#B3BBCB,Light=#3A4354}"
+                HorizontalOptions="Center"
+                Margin="15"/>
+
+            <Editor x:Name="inciListEditor" Grid.Row="1"/>
+
+            <Button x:Name="CheckButton" 
+                    Text="CHECK" 
+                    Clicked="CheckButton_Clicked" 
+                    Grid.Row="2" 
+                    HorizontalOptions="Center"
+                    Margin="10"/>
+
+            <Label x:Name="uploadPhotoLabel" 
+                   Grid.Row="3" 
+                   Text="or..." 
+                   TextColor="{AppThemeBinding Dark=#B3BBCB,Light=#3A4354}"
+                   FontSize="Medium"
+                   HorizontalOptions="Center">
+                <Label.IsVisible>
+                    <OnPlatform x:TypeArguments="x:Boolean">
+                        <On Platform="UWP" Value="false" />
+                        <On Platform="Android, iOS" Value="true" />
+                    </OnPlatform>
+                </Label.IsVisible>
+            </Label>
+
+            <Button x:Name="UploadPhotoButton" 
+                    Text="UPLOAD PHOTO" 
+                    Grid.Row="4" 
+                    HorizontalOptions="Center"
+                    Margin="0, 10, 0, 60">
+                <Button.IsVisible>
+                    <OnPlatform x:TypeArguments="x:Boolean">
+                        <On Platform="UWP" Value="false" />
+                        <On Platform="Android, iOS" Value="true" />
+                    </OnPlatform>
+                </Button.IsVisible>
+            </Button>
+
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

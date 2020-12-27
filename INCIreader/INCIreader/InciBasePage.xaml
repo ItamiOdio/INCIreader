@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="INCIreader.InciBasePage">
+
+    <ContentPage.Resources>
+        <Style TargetType="Label" x:Key="textColor">
+            <Setter Property="TextColor" Value="{AppThemeBinding Dark=#929CC2, Light=#212E47}"/>
+        </Style>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="inciListView"
+                      HasUnevenRows="True"
+                      SeparatorVisibility="None"
+                      HorizontalOptions="FillAndExpand"
+                      VerticalOptions="FillAndExpand">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+
+                            <StackLayout 
+                BackgroundColor="{AppThemeBinding Dark=#1F2845, Light=#AEB9C8}"
+                Margin="10, 5 ,10, 5"
+                Padding="6"
+                MinimumHeightRequest="100">
+                                <Label 
+                       x:Name="nameLabel" 
+                       Text="{Binding Name}"
+                       Style="{StaticResource textColor}"
+                       FontSize="Medium"
+                       FontAttributes="Bold"/>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="AUTO"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="AUTO"></ColumnDefinition>
+                                        <ColumnDefinition Width="AUTO"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label 
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       Text="Type:" 
+                       Style="{StaticResource textColor}"
+                       FontSize="Medium"/>
+
+                                    <Label 
+                       Grid.Row="0"
+                       Grid.Column="1"
+                       x:Name="typeLabel" 
+                       Text="{Binding Type}"
+                       Style="{StaticResource textColor}"
+                       FontSize="Medium"/>
+                                </Grid>
+                                <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="{AppThemeBinding Dark=#929CC2, Light=#212E47}"/>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="AUTO"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="AUTO"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="AUTO"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="AUTO"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label 
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       Text="Harshness:" 
+                       Style="{StaticResource textColor}"
+                       FontSize="Small"/>
+
+                                    <Label 
+                       Grid.Row="0"
+                       Grid.Column="1"
+                       x:Name="harshnessLabel" 
+                       Text="{Binding Harshness}"
+                       Style="{StaticResource textColor}"
+                       FontSize="Small"/>
+
+                                    <Label 
+                       Grid.Row="0"
+                       Grid.Column="2"
+                       Text="CG:" 
+                       Style="{StaticResource textColor}"
+                       FontSize="Small"/>
+
+                                    <Label 
+                       Grid.Row="0"
+                       Grid.Column="3"
+                       x:Name="cgLabel" 
+                       Text="{Binding CG}"
+                       Style="{StaticResource textColor}"
+                       FontSize="Small"/>
+
+                                    <Label 
+                       Grid.Row="0"
+                       Grid.Column="4" 
+                       Text="Vegan:" 
+                       Style="{StaticResource textColor}"
+                       FontSize="Small"/>
+
+                                    <Label 
+                       Grid.Row="0"
+                       Grid.Column="5"
+                       x:Name="veganLabel" 
+                       Text="{Binding Vegan}" 
+                       Style="{StaticResource textColor}"
+                       FontSize="Small"/>
+
+                                </Grid>
+
+
+                            </StackLayout>
+
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="INCIreader.App">
+    <Application.Resources>
+
+        <ResourceDictionary>
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{AppThemeBinding Dark=#3B496C, Light=#8C94A1}" />
+            </Style>
+            <Style TargetType="TabbedPage" ApplyToDerivedTypes="True">
+                <Setter Property="BarBackgroundColor" Value="{AppThemeBinding Dark=#1F2946,Light=#AEB9C8}"/>
+                <Setter Property="SelectedTabColor" Value="{AppThemeBinding Dark=#B3BCC5,Light=#4A5463}"/>
+                <Setter Property="UnselectedTabColor" Value="{AppThemeBinding Dark=#B3BCC5,Light=#4A5463}"/>
+            </Style>
+
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark=#959CB7,Light=#C4CAD0}"></Setter>
+                <Setter Property="CornerRadius" Value="15"></Setter>
+                <Setter Property="TextColor" Value="{AppThemeBinding Dark=#222A35,Light=#394B64}"/>
+            </Style>
+
+            <Style TargetType="Editor">
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark=#1F2946,Light=#AEB9C8}"/>
+                <Setter Property="Opacity" Value="0.5"/>
+                <Setter Property="Margin" Value="20"/>
+                <Setter Property="TextColor" Value="{AppThemeBinding Dark=#8995AB,Light=#292F43}"/>
+            </Style>
+
+
+        </ResourceDictionary>
+
+    </Application.Resources>
+</Application>
