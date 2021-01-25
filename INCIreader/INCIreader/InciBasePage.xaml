@@ -8,6 +8,15 @@
             <Setter Property="TextColor" Value="{AppThemeBinding Dark=#929CC2, Light=#212E47}"/>
         </Style>
     </ContentPage.Resources>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem  x:Name="addButton"
+                IconImageSource="ic_action_add_circle_outline.png"   
+                Priority="0"
+                Order="Primary"
+                Clicked="addButton_Clicked"/>
+    </ContentPage.ToolbarItems>
+
     <ContentPage.Content>
         <StackLayout>
             <ListView x:Name="inciListView"
@@ -18,10 +27,10 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-
+                            <Frame CornerRadius="5" Padding="0" BackgroundColor="{AppThemeBinding Dark=#1B202E, Light=#AEB9C8}" Margin="10, 5 ,10, 5">
                             <StackLayout 
-                BackgroundColor="{AppThemeBinding Dark=#1F2845, Light=#AEB9C8}"
-                Margin="10, 5 ,10, 5"
+                BackgroundColor="{AppThemeBinding Dark=#1B202E, Light=#AEB9C8}"
+                
                 Padding="6"
                 MinimumHeightRequest="100">
                                 <Label 
@@ -117,7 +126,7 @@
 
 
                             </StackLayout>
-
+                            </Frame>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>

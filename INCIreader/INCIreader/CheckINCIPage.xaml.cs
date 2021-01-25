@@ -17,7 +17,6 @@ namespace INCIreader
         {
             InitializeComponent();
 
-
         }
 
 
@@ -25,7 +24,17 @@ namespace INCIreader
         async private void CheckButton_Clicked(object sender, EventArgs e)
         {
             string ings = inciListEditor.Text;
-            await Navigation.PushAsync(new ResultsPage(ings));
+
+            if (ings != null)
+            {
+                await Navigation.PushAsync(new ResultsPage(ings));
+            }
+            else
+            {
+                await DisplayAlert("Your INCI is empty", "Paste your INCI and try again", "OK");
+            }
+            
         }
+
     }
 }

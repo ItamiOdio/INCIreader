@@ -3,30 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="INCIreader.CheckINCIPage">
 
-    <ContentPage.Resources>
-
-    </ContentPage.Resources>
-
-    <NavigationPage.TitleView>
-        <AbsoluteLayout VerticalOptions="CenterAndExpand">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition></RowDefinition>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"></ColumnDefinition>
-                    <ColumnDefinition Width="*"></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-             <Label Text="DARK MODE" Grid.Column="0" HorizontalTextAlignment="End"></Label>
-            <Switch IsToggled="False" Grid.Column="1" HorizontalOptions="End"></Switch>
-            
-            </Grid>
-            
-        </AbsoluteLayout>
-    </NavigationPage.TitleView>
-
-
-
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>

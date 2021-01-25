@@ -26,7 +26,6 @@ namespace INCIreader
                 itemPage.BindingContext = item;
                 Navigation.PushAsync(itemPage);
             };
-
         }
 
         protected override async void OnAppearing()
@@ -38,13 +37,18 @@ namespace INCIreader
                 myList[i] = myList[i].Trim();
             }
 
-            string test = myList[4];
-            Console.WriteLine(test);
-
             base.OnAppearing();
             var ings = await App.Database.GetIngsAsync();
             var result = from x in ings where myList.Contains(x.Name) orderby x.Type, x.Name select x;
             foundInciListView.ItemsSource = result;
+            if (result.Count() == 0)
+            {
+                if (!await DisplayAlert("No ingredientes found", "Make sure your ingredientes are divided by coma or insert missing ones into your database", null, "OK"))
+                {
+                    await Navigation.PopAsync();
+                };
+
+            }
 
         }
     }

@@ -17,7 +17,7 @@ namespace INCIreader
             {
                 if (database == null)
                 {
-                    database = new Database(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "testowa5db3"));
+                    database = new Database(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "testowa6.db3"));
                 }
                 return database;
             }
@@ -27,8 +27,7 @@ namespace INCIreader
         public static INavigation Nav { get; set; }
         public App()
         {
-            Device.SetFlags(new string[] { "AppTheme_Experimental" });
-            Device.SetFlags(new[] { "Brush_Experimental" });
+            Device.SetFlags(new[] { "Brush_Experimental", "RadioButton_Experimental" });
             InitializeComponent();
 
             MainPage = new MainPage();

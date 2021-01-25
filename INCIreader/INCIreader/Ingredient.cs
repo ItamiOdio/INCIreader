@@ -5,7 +5,7 @@ namespace INCIreader
     {
             [PrimaryKey, AutoIncrement]
             public int ID { get; set; }
-            [MaxLength(100), NotNull]
+            [MaxLength(100), Unique, NotNull]
             public string Name { get; set; }
             [MaxLength(15)]
             public string Type { get; set; }

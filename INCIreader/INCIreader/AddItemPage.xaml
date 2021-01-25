@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="INCIreader.AddItemPage">
+    <ContentPage.Resources>
+        <Style TargetType="Label"
+               x:Key="textColor">
+            <Setter Property="TextColor"
+                    Value="{AppThemeBinding Dark=#929CC2, Light=#212E47}" />
+        </Style>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+
+
+        <StackLayout VerticalOptions="FillAndExpand">
+            <Grid VerticalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="AUTO" />
+                    <RowDefinition Height="AUTO" />
+                    <RowDefinition Height="AUTO" />
+                    <RowDefinition Height="AUTO" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Entry x:Name="nameEntry"
+                       Grid.Row="0"
+                       Style="{StaticResource textColor}"
+                       FontSize="Title"
+                       Text="{Binding Name}"
+                       HorizontalOptions="FillAndExpand"
+                       Margin="8"
+                       MaxLength="100" />
+
+                <Frame CornerRadius="10"
+                       Padding="0"
+                       BackgroundColor="{AppThemeBinding Dark=#1E2129, Light=#AEB9C8}"
+                       Grid.Row="2"
+                       Margin="10, 6, 10, 6">
+                    <StackLayout BackgroundColor="{AppThemeBinding Dark=#1E2129, Light=#AEB9C8}">
+
+                        <!-- Ingredient info grid -->
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="AUTO" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Label Grid.Column="0"
+                                   VerticalOptions="CenterAndExpand"
+                                   Style="{StaticResource textColor}"
+                                   Text="Type:"
+                                   FontSize="Medium"
+                                   Margin="6, 6, 0, 0" />
+
+                            <Entry x:Name="typeEntry"
+                                   Grid.Column="1"
+                                   VerticalOptions="CenterAndExpand"
+                                   HorizontalOptions="FillAndExpand"
+                                   Text="{Binding Type}"
+                                   Style="{StaticResource textColor}"
+                                   FontSize="Medium"
+                                   Margin="0, 6, 6, 4"
+                                   MaxLength="15" />
+                        </Grid>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="AUTO" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Label Grid.Column="0"
+                                   VerticalOptions="CenterAndExpand"
+                                   Style="{StaticResource textColor}"
+                                   Text="Harshness:"
+                                   FontSize="Medium"
+                                   Margin="6, 0, 0, 0" />
+
+                            <Entry x:Name="harshnessEntry"
+                                   VerticalOptions="CenterAndExpand"
+                                   HorizontalOptions="FillAndExpand"
+                                   Grid.Column="1"
+                                   Text="{Binding Harshness}"
+                                   Style="{StaticResource textColor}"
+                                   FontSize="Medium"
+                                   Margin="0, 0, 6, 4"
+                                   MaxLength="10" />
+
+                        </Grid>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="AUTO"></ColumnDefinition>
+                                <ColumnDefinition Width="AUTO"></ColumnDefinition>
+                                <ColumnDefinition Width="AUTO"></ColumnDefinition>
+                                <ColumnDefinition Width="AUTO"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+
+                            <Label Grid.Column="0"
+                                   VerticalOptions="CenterAndExpand"
+                                   Style="{StaticResource textColor}"
+                                   Text="CG:"
+                                   FontSize="Small"
+                                   Margin="6" />
+
+                            <Entry x:Name="cgEntry"
+                                   Grid.Column="1"
+                                   VerticalOptions="CenterAndExpand"
+                                   Text="{Binding CG}"
+                                   Style="{StaticResource textColor}"
+                                   FontSize="Small"
+                                   Margin="0, 6, 6, 6"
+                                   MaxLength="15" />
+
+                            <Label Grid.Column="2"
+                                   VerticalOptions="CenterAndExpand"
+                                   Style="{StaticResource textColor}"
+                                   Text="Vegan:"
+                                   FontSize="Small"
+                                   Margin="6" />
+
+                            <Entry x:Name="veganEntry"
+                                   Grid.Column="3"
+                                   VerticalOptions="CenterAndExpand"
+                                   Text="{Binding Vegan}"
+                                   Style="{StaticResource textColor}"
+                                   FontSize="Small"
+                                   Margin="0, 6, 6, 6"
+                                   MaxLength="15" />
+                        </Grid>
+
+
+                    </StackLayout>
+                </Frame>
+
+                <!-- Notes -->
+
+                <Label Grid.Row="3"
+                       Style="{StaticResource textColor}"
+                       Margin="10, 0, 0, 0"
+                       Text="Notes: "
+                       FontSize="Medium"
+                       FontAttributes="Bold" />
+
+
+                <Frame CornerRadius="10"
+                       Padding="0"
+                       BackgroundColor="{AppThemeBinding Dark=#1E2129, Light=#AEB9C8}"
+                       Margin="10, 6, 10, 0"
+                       Grid.Row="4">
+
+                    <ScrollView VerticalOptions="FillAndExpand">
+                        <Editor x:Name="notesEditor"
+                                MaxLength="250"
+                                Text="{Binding Notes}"
+                                BackgroundColor="{AppThemeBinding Dark=#1E2129, Light=#AEB9C8}" />
+                    </ScrollView>
+                </Frame>
+
+            </Grid>
+            <Button x:Name="saveButton"
+                    Text="Save"
+                    HorizontalOptions="CenterAndExpand"
+                    Margin="15"
+                    Clicked="saveButton_Clicked" />
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

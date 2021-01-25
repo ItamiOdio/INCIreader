@@ -29,9 +29,23 @@ namespace INCIreader
             base.OnAppearing();
             var ings = await App.Database.GetIngsAsync();
             var result = from x in ings orderby x.Type, x.Name select x;
-            inciListView.ItemsSource = result; 
-            
+            inciListView.ItemsSource = result;
+
         }
 
+        async private void addButton_Clicked(object sender, EventArgs e)
+        {
+            Ingredient item = new Ingredient();           
+            item.Name = "";
+            item.Type = "";
+            item.Harshness = "";
+            item.CG = "";
+            item.Vegan = "";
+            item.Notes = "";
+            var addItem = new AddItemPage();
+            addItem.BindingContext = item;
+
+            await Navigation.PushAsync(addItem);
+        }
     }
 }

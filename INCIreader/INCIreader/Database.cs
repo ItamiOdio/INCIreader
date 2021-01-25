@@ -57,11 +57,20 @@ namespace INCIreader
           return _database.Table<Ingredient>().ToListAsync();
         }
 
-        public Task<int> SaveIngAsync(Ingredient person)
+        public Task<int> SaveIngAsync(Ingredient ing)
         {
-            return _database.InsertAsync(person);
+            return _database.InsertAsync(ing);
         }
 
+        public Task<int> UpdateIngAsync(Ingredient ing)
+        {
+            return _database.UpdateAsync(ing);
+        }
+
+        public Task<int> DeleteIngAsync(Ingredient ing)
+        {
+            return _database.DeleteAsync(ing);
+        }
 
         public bool IfTableExists(string tableName)
         {
