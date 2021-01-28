@@ -30,34 +30,9 @@
                     Clicked="CheckButton_Clicked" 
                     Grid.Row="2" 
                     HorizontalOptions="Center"
-                    Margin="10"/>
+                    Margin="10, 10, 10, 40"/>
 
-            <Label x:Name="uploadPhotoLabel" 
-                   Grid.Row="3" 
-                   Text="or..." 
-                   TextColor="{AppThemeBinding Dark=#B3BBCB,Light=#3A4354}"
-                   FontSize="Medium"
-                   HorizontalOptions="Center">
-                <Label.IsVisible>
-                    <OnPlatform x:TypeArguments="x:Boolean">
-                        <On Platform="UWP" Value="false" />
-                        <On Platform="Android, iOS" Value="true" />
-                    </OnPlatform>
-                </Label.IsVisible>
-            </Label>
 
-            <Button x:Name="UploadPhotoButton" 
-                    Text="UPLOAD PHOTO" 
-                    Grid.Row="4" 
-                    HorizontalOptions="Center"
-                    Margin="0, 10, 0, 60">
-                <Button.IsVisible>
-                    <OnPlatform x:TypeArguments="x:Boolean">
-                        <On Platform="UWP" Value="false" />
-                        <On Platform="Android, iOS" Value="true" />
-                    </OnPlatform>
-                </Button.IsVisible>
-            </Button>
 
         </Grid>
 

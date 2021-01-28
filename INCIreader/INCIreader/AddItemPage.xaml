@@ -92,9 +92,9 @@
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="AUTO"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
                                 <ColumnDefinition Width="AUTO"></ColumnDefinition>
-                                <ColumnDefinition Width="AUTO"></ColumnDefinition>
-                                <ColumnDefinition Width="AUTO"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
 
                             <Label Grid.Column="0"

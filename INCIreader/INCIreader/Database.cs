@@ -57,6 +57,11 @@ namespace INCIreader
           return _database.Table<Ingredient>().ToListAsync();
         }
 
+        public Task<Ingredient> GetSingleIng(int id)
+        {
+            return _database.GetAsync<Ingredient>(id);
+        }
+
         public Task<int> SaveIngAsync(Ingredient ing)
         {
             return _database.InsertAsync(ing);

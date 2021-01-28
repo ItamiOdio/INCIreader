@@ -25,7 +25,7 @@ namespace INCIreader
         {
             string ings = inciListEditor.Text;
 
-            if (ings != null)
+            if (ings != null && ings != "")
             {
                 await Navigation.PushAsync(new ResultsPage(ings));
             }

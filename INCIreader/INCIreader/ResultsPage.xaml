@@ -19,7 +19,7 @@
                         <ViewCell>
 
                             <StackLayout 
-                BackgroundColor="{AppThemeBinding Dark=#1F2845, Light=#AEB9C8}"
+                BackgroundColor="{AppThemeBinding Dark=#1B202E, Light=#AEB9C8}"
                 Margin="10, 5 ,10, 5"
                 Padding="6"
                 MinimumHeightRequest="100">

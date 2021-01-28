@@ -17,13 +17,13 @@ namespace INCIreader
         public ResultsPage(string ingredientes)
         {
             InitializeComponent();
-            getInci = ingredientes;
+            getInci = ingredientes.ToUpper();
 
             foundInciListView.ItemSelected += (object sender, SelectedItemChangedEventArgs e) =>
             {
                 var item = (Ingredient)e.SelectedItem;
                 var itemPage = new ShowItemPage();
-                itemPage.BindingContext = item;
+                itemPage.BindingContext = item.ID;
                 Navigation.PushAsync(itemPage);
             };
         }
@@ -39,7 +39,7 @@ namespace INCIreader
 
             base.OnAppearing();
             var ings = await App.Database.GetIngsAsync();
-            var result = from x in ings where myList.Contains(x.Name) orderby x.Type, x.Name select x;
+            var result = from x in ings where myList.Contains(x.Name.ToUpper()) orderby x.Type, x.Name select x;
             foundInciListView.ItemsSource = result;
             if (result.Count() == 0)
             {

@@ -40,7 +40,7 @@
                    Grid.Row="0"
                    x:Name="itemName"
                    Style="{StaticResource textColor}"
-                   Text="{Binding Name}"
+                   
                    FontSize="Title"
                    FontAttributes="Bold"
                    HorizontalOptions="CenterAndExpand"
@@ -81,7 +81,7 @@
                             x:Name="itemType"
                             Grid.Column="1"
                             Style="{StaticResource textColor}"
-                            Text="{Binding Type}"
+                            
                             FontSize="Medium"
                             FontAttributes="Bold"
                             Margin="0, 6, 6, 4"/>
@@ -103,7 +103,7 @@
                             x:Name="itemHarshness"
                             Grid.Column="1"
                             Style="{StaticResource textColor}"
-                            Text="{Binding Harshness}"
+                            
                             FontSize="Medium"
                             FontAttributes="Bold"
                             Margin="0, 0, 6, 4"/>
@@ -129,7 +129,7 @@
                             x:Name="itemCG"
                             Grid.Column="1"
                             Style="{StaticResource textColor}"
-                            Text="{Binding CG}"
+                            
                             FontSize="Small"
                             FontAttributes="Bold"
                             Margin="0, 6, 6, 6"/>
@@ -145,7 +145,7 @@
                             x:Name="itemVegan"
                             Grid.Column="3"
                             Style="{StaticResource textColor}"
-                            Text="{Binding Vegan}"
+                            
                             FontSize="Small"
                             FontAttributes="Bold"
                             Margin="0, 6, 6, 6"/>
@@ -179,7 +179,7 @@
                         <ScrollView VerticalOptions="FillAndExpand">
                             <Label x:Name="itemNotes"
                                    Style="{StaticResource textColor}"
-                     Text="{Binding Notes}"
+                     
                      FontSize="Medium"
                      Padding="7"/>
                         </ScrollView>

@@ -19,7 +19,7 @@ namespace INCIreader
             {
                 var item = (Ingredient)e.SelectedItem;
                 var itemPage = new ShowItemPage();
-                itemPage.BindingContext = item;
+                itemPage.BindingContext = item.ID;
                 Navigation.PushAsync(itemPage);
             };
         }

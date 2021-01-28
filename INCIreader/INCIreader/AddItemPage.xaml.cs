@@ -27,7 +27,7 @@ namespace INCIreader
         async private void saveButton_Clicked(object sender, EventArgs e)
         {
             var ings = await App.Database.GetIngsAsync();
-            if (nameEntry.Text != null)
+            if (nameEntry.Text != null && nameEntry.Text !="")
             {
                 Ingredient newIngredient = (Ingredient)BindingContext; ;
 
@@ -70,7 +70,7 @@ namespace INCIreader
 
         public bool ExistsInDatabase(string name, List<Ingredient> dbList)
         {
-            var result = from x in dbList where x.Name == name select x;
+            var result = from x in dbList where x.Name.ToUpper() == name.ToUpper() select x;
             if (result.Count() > 0)
             {
                 return true;
